@@ -2,8 +2,10 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer'; 
 import PersonalDetails from './Pages/PersonalDetails';
 import './App.css';
+import { useState } from 'react';
 
 function  App  () {
+    const [activepage, setActivepage ] = useState('home');
     return(
        <>
        <div className="header">
@@ -12,11 +14,22 @@ function  App  () {
 
         <div className="main-layout">
        <div className="container-Navbar">
-        <Navbar />
+
+        <Navbar  setActivepage={setActivepage}/>
        </div>
 
        <div className="container-Personal-Details">
-        <PersonalDetails />
+         {activepage  === 'home' && (
+            <div className='welcome-page'>
+        <h2> Welcome student management sysytem </h2> </div>
+
+       )} 
+
+       {activepage === 'personal' && (
+         <PersonalDetails />
+       )}
+       {/* <Navbar setactivepage ={setactivepage}></Navbar> */}
+        
        </div>
 
        <div className="AI-Chatbot">
@@ -27,6 +40,9 @@ function  App  () {
        <div className="footer">
         <Footer />
        </div>
+
+       
+      
 
        </>
     );

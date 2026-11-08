@@ -1,9 +1,8 @@
 import {useState} from 'react';  
+ 
 
-
-   const Navbar = () => {
-
-    const [open, setOpen] = useState(false);
+   const Navbar = ({setActivepage}) => {
+    const [open, setOpen,  ] = useState(false);
     return(
         <header>
 
@@ -17,7 +16,8 @@ import {useState} from 'react';
                
                 <nav>
 
-                    <li><a href="#"> Personal Details</a></li>
+                    <li onClick={
+                        ()=>setActivepage('personal')}><a href="#"> Personal Details</a></li>
 
                     
                     < li className='dropdown'> 
