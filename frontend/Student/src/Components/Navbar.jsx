@@ -20,7 +20,7 @@ import {useState} from 'react';
                     <li><a href="#"> Personal Details</a></li>
 
                     
-                    < li ClassName='dropdown'> 
+                    < li className='dropdown'> 
                    <div className='dropdown-btn' onClick={() => setOpen(!open)}><span>Academic</span>
                    <span className='icon'>{open ? '^' : 'v'}</span></div>
 
