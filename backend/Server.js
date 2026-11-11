@@ -17,7 +17,7 @@ app.use(cors());
 app.use('/api/students', Routes)
 
 app.get('/', (req, res) => {
-    res.send('Server mode on')
+    res.send('Server mode on')    
 });
 
 app.listen(PORT, () => {

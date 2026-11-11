@@ -1,7 +1,7 @@
 import {useState} from 'react';
-import './Personal.css'
+import './Personal.css'                           
 
-function PersonalDetails () {
+function PersonalDetails ()  {
 
     const [students, setStudents] = useState([]);
     const [ showForm, setshowForm] = useState(false)
@@ -22,27 +22,6 @@ function PersonalDetails () {
         });
     
     }
-
-    // const handleSubmit  = (e) => {
-    //     e.preventDefault();
-
-    //     setStudents([...students, {...formData,
-    //         id: Date.now()
-
-    //     }]);
-
-    //     setFormData({
-    //         name: '',
-    //         roll: '',
-    //         email: '',
-    //         phone: '',
-    //         address: '',
-    //         dob: ''
-    //     });
-
-    //     setshowForm(false);
-
-    // }
 
     const handleSubmit = async (e) => {
     e.preventDefault();

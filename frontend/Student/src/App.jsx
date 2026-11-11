@@ -1,11 +1,14 @@
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer'; 
 import PersonalDetails from './Pages/PersonalDetails';
+import Classes from './Pages/classes';
 import './App.css';
 import { useState } from 'react';
 
+
 function  App  () {
     const [activepage, setActivepage ] = useState('home');
+    
     return(
        <>
        <div className="header">
@@ -27,6 +30,10 @@ function  App  () {
 
        {activepage === 'personal' && (
          <PersonalDetails />
+       )}
+
+       {activepage === 'Classes' && (
+        <Classes/>
        )}
        {/* <Navbar setactivepage ={setactivepage}></Navbar> */}
         

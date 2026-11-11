@@ -1,7 +1,7 @@
 import {useState} from 'react';  
  
 
-   const Navbar = ({setActivepage}) => {
+   const Navbar = ({setActivepage }) => {
     const [open, setOpen,  ] = useState(false);
     return(
         <header>
@@ -26,7 +26,7 @@ import {useState} from 'react';
 
                      {open && (
                         <ul className='dropdown-Menu'>
-                            <li  className='dropdown-item'><a href="#">Clases</a></li>
+                            <li onClick={()=> setActivepage('Classes')}><a href='#'>Classes</a></li>
                             <li className='dropdown-item'><a href="#">Teachers</a></li>
                             <li className='dropdown-item'><a href="#">Schedule</a></li>
                         </ul>
