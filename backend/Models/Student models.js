@@ -12,5 +12,15 @@ const StudentSchema = new mongoose.Schema({
 
 });
 
-const Student = mongoose.model("Student", StudentSchema);
-export default Student;
+const ClassSchema = new mongoose.Schema({
+
+   Classses: String,
+   Timeing:  String,
+   Mintus: String,
+   Teacher: String
+
+});
+
+ export const Class = mongoose.model("Class", ClassSchema)
+ export const Student = mongoose.model("Student", StudentSchema);
+

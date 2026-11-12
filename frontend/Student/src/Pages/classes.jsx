@@ -17,8 +17,24 @@ function Classes() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) =>  {
         e.preventDefault();
+      try{
+        const respone = await fetch("http://localhost:5000/api/students/Class",{
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify(formData) }
+        )
+
+        const result = await respone.json();
+
+        if(!respone.ok){
+            throw new Error(result.message || "Class information not save")
+        }
+      
         setClasses((currentClasses) => [...currentClasses, { ...formData, id: Date.now() }]);
         setFormData({ 
             ClassName: '', 
@@ -26,7 +42,18 @@ function Classes() {
             Mintus: '',
             Teacher: ''
              });
+
         setShowForm(false);
+           alert("Class infromation save successfully")
+
+        }catch(error){
+        console.log("class fecthing error", error)
+        alert("fetching error")
+
+        
+      }
+
+      
     };
 
     const deleteClass = (id) => {
